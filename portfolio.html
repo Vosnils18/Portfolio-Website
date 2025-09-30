@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nils Vos - Data Science & AI Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="particles" id="particles"></div>
+    <div class="matrix-bg" id="matrix"></div>
+    <div class="scan-lines"></div>
+
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#job">Current Role</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <!-- <li><a href="#certificates">Certificates</a></li> -->
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="neon-glow">Nils Vos</h1>
+            <p class="hero-subtitle">Data Science & AI Engineer | Industrial Automation Specialist</p>
+            <div class="hero-subtitle holographic">Data/Software Engineer | Data Science & AI Student | Cybersecurity Enthousiast</div>
+            <a href="#job" class="cta-button">Explore My Work</a>
+        </div>
+    </section>
+
+    <section id="job" class="fade-in">
+        <h2>Current Role</h2>
+        <div class="job-card floating">
+            <img src="./thumbnail_image.png" alt="FoxBMS Logo">
+            <h3>Software/Data Engineer</h3>
+            <p>Developing smart building management systems that optimize performance, enhance comfort, and reduce energy consumption. Working with FOX BMS to deliver innovative building automation solutions for offices, healthcare facilities, educational institutions, luxury yachts, and industrial environments using advanced control technology and IoT integrations.</p>
+            
+            <div class="terminal data-flow">
+                <div class="terminal-header">
+                    <div class="terminal-button red"></div>
+                    <div class="terminal-button yellow"></div>
+                    <div class="terminal-button green"></div>
+                </div>
+                <div class="terminal-content">
+                    <div>$ python building_optimization.py --system=foxbms --data=sensors</div>
+                </div>
+                <div class="code-rain" id="codeRain"></div>
+            </div>
+            
+            <div class="project-tech">
+                <span class="tech-tag">Building Management Systems</span>
+                <span class="tech-tag">Tridium Niagara 4.14</span>
+                <span class="tech-tag">Database Management</span>
+                <span class="tech-tag">Linux System Administration</span>
+                <span class="tech-tag">Data Engineering</span>
+                <span class="tech-tag">Python</span>
+            </div>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">9+</div>
+                <div class="stat-label">Major Projects</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">94%</div>
+                <div class="stat-label">Best Model Accuracy</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">€426</div>
+                <div class="stat-label">Annual Cloud Cost Savings</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">16k+</div>
+                <div class="stat-label">Data Points Analyzed</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="fade-in">
+        <h2>Education</h2>
+        <div class="education-grid">
+            <div class="education-card floating">
+                <div class="university-icon">🎓</div>
+                <h3>Breda University of Applied Sciences (BUAS)</h3>
+                <p><strong>Applied Data Science & Artificial Intelligence</strong></p>
+                <p>Focus on Machine Learning, Computer Vision, and Industrial Applications</p>
+            </div>
+            <div class="education-card floating" style="animation-delay: 1s;">
+                <div class="university-icon">🇦🇹</div>
+                <h3>Upcoming: Austria Master's Program</h3>
+                <p><strong>2-Year Advanced Studies</strong></p>
+                <p>Continuing education in AI and Data Science</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="fade-in">
+        <h2>Featured Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-highlight">🏆 Production Deployed</div>
+                <h3>🌱 PlantSeg - Agricultural AI Platform</h3>
+                <p>Production-grade plant root segmentation system for NPEC. Features U-Net architecture with ResNet50 encoder, automated retraining pipelines, and both cloud and on-premise deployment. Includes GDPR compliance and EU AI Act risk assessment.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">U-Net/ResNet50</span>
+                    <span class="tech-tag">Azure ML</span>
+                    <span class="tech-tag">FastAPI</span>
+                    <span class="tech-tag">Docker</span>
+                    <span class="tech-tag">MLOps</span>
+                    <span class="tech-tag">GDPR Compliant</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-highlight">🚛 Current Academic Project</div>
+                <h3>DAF Truck Predictive Maintenance</h3>
+                <p>Academic project developing predictive maintenance system for DAF commercial vehicles. Integrating rFMS telematics data, RDW vehicle registration data, and other heterogeneous data sources using CRISP-DM methodology for failure prediction and maintenance optimization.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">CRISP-DM</span>
+                    <span class="tech-tag">Extensive Data Processing</span>
+                    <span class="tech-tag">Heterogenous Data Integration</span>
+                    <span class="tech-tag">Predictive Analytics</span>
+                    <span class="tech-tag">Academic Research</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-highlight">🚛 Neural Networks</div>
+                <h3>Roadie - Traffic Safety AI System</h3>
+                <p>Advanced neural network system predicting vehicle accidents using telematics data and CRISP-DM methodology. Integrates PostgreSQL data warehouse, feature engineering for g-force calculations, and real-time accident probability assessment with web dashboard.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">TensorFlow/Keras</span>
+                    <span class="tech-tag">PostgreSQL</span>
+                    <span class="tech-tag">ANWB Data</span>
+                    <span class="tech-tag">Weather APIs</span>
+                    <span class="tech-tag">Neural Networks</span>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-highlight">⚽ 82% Accuracy</div>
+                <h3>Football Player Value Classification</h3>
+                <p>Gradient Boosting Classifier achieving 82% accuracy for NAC Breda recruitment strategy. Analyzed 16,535 players across 114 features with comprehensive hyperparameter tuning and correlation analysis for identifying undervalued talent.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">Gradient Boosting</span>
+                    <span class="tech-tag">Ensemble Machine Learning</span>
+                    <span class="tech-tag">Scikit-learn</span>
+                    <span class="tech-tag">Feature Engineering</span>
+                    <span class="tech-tag">Sports Analytics</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-highlight">🎨 90% Accuracy</div>
+                <h3>Art Style Classification CNN</h3>
+                <p>Deep learning model classifying images into 7 different art styles for Innovation Square entrepreneurship competition. Included market research, risk assessment, and user-centered prototype development with potential business pitch to investors.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">CNN</span>
+                    <span class="tech-tag">Computer Vision</span>
+                    <span class="tech-tag">Business Development</span>
+                    <span class="tech-tag">Entrepreneurship</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-highlight">🔒 Research Published</div>
+                <h3>SME Cybersecurity & Consumer Trust</h3>
+                <p>Mixed-methods research studying cybersecurity practices' impact on consumer trust. Statistical analysis with Chi-Square testing (p<0.01), thematic analysis of interviews, and policy recommendations for small businesses and regulatory compliance.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">Statistical Analysis</span>
+                    <span class="tech-tag">Survey Research</span>
+                    <span class="tech-tag">Policy Development</span>
+                    <span class="tech-tag">GDPR</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-highlight">🤖 Reinforcement Learning</div>
+                <h3>Robotic Simulation & Control</h3>
+                <p>Opentron OT-2 robot simulation with custom Gymnasium environment, PPO agent training using Stable-Baselines3, and PID controller implementation. Includes working envelope determination and precision liquid handling automation.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">Reinforcement Learning</span>
+                    <span class="tech-tag">OpenAI Gymnasium</span>
+                    <span class="tech-tag">PPO Algorithm</span>
+                    <span class="tech-tag">PID Control</span>
+                    <span class="tech-tag">Robotics</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-highlight">🎥 NLP Pipeline</div>
+                <h3>Dutch Video Emotion Analysis</h3>
+                <p>End-to-end pipeline processing Dutch YouTube videos: audio extraction, Whisper transcription, MarianMT translation, and fine-tuned RobBERT emotion classification. Optimized for batch processing with GPU acceleration.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">OpenAI Whisper</span>
+                    <span class="tech-tag">RobBERT</span>
+                    <span class="tech-tag">MarianMT</span>
+                    <span class="tech-tag">Transformers</span>
+                    <span class="tech-tag">NLP</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-highlight">🏭 Industrial IoT</div>
+                <h3>Industrial Automation Systems</h3>
+                <p>Comprehensive automation solutions using Tridium Niagara 4.14 with ISMA modules for real-time monitoring and control. Includes IO block wiring diagrams, digital input mappings, and emergency safety protocols for industrial environments.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">Tridium Niagara</span>
+                    <span class="tech-tag">ISMA Modules</span>
+                    <span class="tech-tag">Industrial IoT</span>
+                    <span class="tech-tag">Linux Systems</span>
+                    <span class="tech-tag">Safety Protocols</span>
+                </div>
+            </div>
+
+            <!-- <div class="project-card">
+                <div class="project-highlight">🛒 E-commerce</div>
+                <h3>CiZilla Streetwear Brand</h3>
+                <p>Built and manage e-commerce platform using Shopify, including inventory management, customer analytics, digital marketing automation, and brand development for streetwear market.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">Shopify</span>
+                    <span class="tech-tag">E-commerce</span>
+                    <span class="tech-tag">Digital Marketing</span>
+                    <span class="tech-tag">Business Management</span>
+                </div>
+            </div> -->
+        </div>
+    </section>
+
+    <section id="skills" class="fade-in">
+        <h2>Technical Expertise</h2>
+        <div class="skills-container">
+            <div class="skill-category">
+                <h3>Machine Learning & AI</h3>
+                <ul class="skill-list">
+                    <li>Deep Learning (TensorFlow, Keras)<div class="skill-progress"><div class="skill-progress-bar" style="width: 75%;"></div></div></li>
+                    <li>Machine Learning<div class="skill-progress"><div class="skill-progress-bar" style="width: 90%;"></div></div></li>
+                    <li>Computer Vision<div class="skill-progress"><div class="skill-progress-bar" style="width: 75%;"></div></div></li>
+                    <li>Natural Language Processing<div class="skill-progress"><div class="skill-progress-bar" style="width: 40%;"></div></div></li>
+                    <li>Reinforcement Learning<div class="skill-progress"><div class="skill-progress-bar" style="width: 50%;"></div></div></li>
+                    <li>Statistical Analysis<div class="skill-progress"><div class="skill-progress-bar" style="width: 75%;"></div></div></li>
+                    <li>Feature Engineering<div class="skill-progress"><div class="skill-progress-bar" style="width: 80%;"></div></div></li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Industrial Automation</h3>
+                <ul class="skill-list">
+                    <li>Tridium Niagara 4.14<div class="skill-progress"><div class="skill-progress-bar" style="width: 30%;"></div></div></li>
+                    <li>IO Block Wiring Diagrams<div class="skill-progress"><div class="skill-progress-bar" style="width: 55%;"></div></div></li>
+                    <li>Predictive Maintenance<div class="skill-progress"><div class="skill-progress-bar" style="width: 75%;"></div></div></li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Cloud & DevOps</h3>
+                <ul class="skill-list">
+                    <li>Azure ML & Container Services<div class="skill-progress"><div class="skill-progress-bar" style="width: 45%;"></div></div></li>
+                    <li>Docker & Kubernetes<div class="skill-progress"><div class="skill-progress-bar" style="width: 40%;"></div></div></li>
+                    <li>MLOps Pipelines<div class="skill-progress"><div class="skill-progress-bar" style="width: 85%;"></div></div></li>
+                    <li>CI/CD Implementation<div class="skill-progress"><div class="skill-progress-bar" style="width: 85%;"></div></div></li>
+                    <li>Model Deployment<div class="skill-progress"><div class="skill-progress-bar" style="width: 85%;"></div></div></li>
+                    <li>Cost Optimization<div class="skill-progress"><div class="skill-progress-bar" style="width: 60%;"></div></div></li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Programming & Data</h3>
+                <ul class="skill-list">
+                    <li>Python (Advanced)<div class="skill-progress"><div class="skill-progress-bar" style="width: 85%;"></div></div></li>
+                    <li>SQL & PostgreSQL<div class="skill-progress"><div class="skill-progress-bar" style="width: 40%;"></div></div></li>
+                    <li>Linux Administration<div class="skill-progress"><div class="skill-progress-bar" style="width: 90%;"></div></div></li>
+                    <li>Git Version Control<div class="skill-progress"><div class="skill-progress-bar" style="width: 80%;"></div></div></li>
+                    <li>Data Pipeline Development<div class="skill-progress"><div class="skill-progress-bar" style="width: 85%;"></div></div></li>
+                    <li>API Development (FastAPI)<div class="skill-progress"><div class="skill-progress-bar" style="width: 55%;"></div></div></li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Research & Analysis</h3>
+                <ul class="skill-list">
+                    <li>Mixed Methods Research<div class="skill-progress"><div class="skill-progress-bar" style="width: 50%;"></div></div></li>
+                    <li>Statistical Hypothesis Testing<div class="skill-progress"><div class="skill-progress-bar" style="width: 80%;"></div></div></li>
+                    <li>Survey Design & Analysis<div class="skill-progress"><div class="skill-progress-bar" style="width: 50%;"></div></div></li>
+                    <li>Academic Writing<div class="skill-progress"><div class="skill-progress-bar" style="width: 75%;"></div></div></li>
+                    <li>Policy Development<div class="skill-progress"><div class="skill-progress-bar" style="width: 90%;"></div></div></li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Specialized Domains</h3>
+                <ul class="skill-list">
+                    <li>Industrial IoT Systems<div class="skill-progress"><div class="skill-progress-bar" style="width: 70%;"></div></div></li>
+                    <li>Cybersecurity Analysis<div class="skill-progress"><div class="skill-progress-bar" style="width: 60%;"></div></div></li>
+                    <li>Robotics Simulation<div class="skill-progress"><div class="skill-progress-bar" style="width: 80%;"></div></div></li>
+                    <li>Legacy Hardware Restoration<div class="skill-progress"><div class="skill-progress-bar" style="width: 70%;"></div></div></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- <section id="certificates" class="fade-in">
+        <h2>Certifications</h2>
+        <div class="certificates-grid">
+            <div class="certificate-card">
+                <div class="certificate-icon">🏆</div>
+                <h3>Machine Learning Certification</h3>
+                <p>Advanced certification in machine learning algorithms and deep neural networks</p>
+                <small>Certification details to be updated</small>
+            </div>
+            
+            <div class="certificate-card">
+                <div class="certificate-icon">🛡️</div>
+                <h3>Cybersecurity Professional</h3>
+                <p>Comprehensive security analysis and threat detection certification</p>
+                <small>Certification details to be updated</small>
+            </div>
+            
+            <div class="certificate-card">
+                <div class="certificate-icon">🤖</div>
+                <h3>AI/Deep Learning Specialist</h3>
+                <p>Specialized certification in artificial intelligence and neural network architectures</p>
+                <small>Certification details to be updated</small>
+            </div>
+            
+            <div class="certificate-card">
+                <div class="certificate-icon">⚙️</div>
+                <h3>Industrial Automation Expert</h3>
+                <p>Expert certification in industrial control systems and IoT integration</p>
+                <small>Certification details to be updated</small>
+            </div>
+            
+            <div class="certificate-card">
+                <div class="certificate-icon">☁️</div>
+                <h3>Cloud Architecture Professional</h3>
+                <p>Professional certification in cloud computing and MLOps deployment</p>
+                <small>Certification details to be updated</small>
+            </div>
+            
+            <div class="certificate-card">
+                <div class="certificate-icon">📊</div>
+                <h3>Data Science Specialist</h3>
+                <p>Advanced analytics and statistical modeling certification</p>
+                <small>Certification details to be updated</small>
+            </div>
+
+            <div class="certificate-card">
+                <div class="certificate-icon">🔬</div>
+                <h3>Research Methodology</h3>
+                <p>Academic research and mixed-methods analysis certification</p>
+                <small>Certification details to be updated</small>
+            </div>
+            
+            <div class="certificate-card">
+                <div class="certificate-icon">🐧</div>
+                <h3>Linux System Administration</h3>
+                <p>Advanced Linux systems and Arch/Hyprland configuration certification</p>
+                <small>Certification details to be updated</small>
+            </div>
+        </div>
+    </section> -->
+
+    <section id="contact" class="fade-in">
+        <h2>Get In Touch</h2>
+        <div class="morph-shape"></div>
+        <p style="text-align: center; font-size: 1.2rem; margin-bottom: 2rem;">
+            Ready to collaborate on innovative projects in Data Science, AI Research, Industrial Automation, or Cybersecurity?
+        </p>
+        <div class="contact-links">
+            <a href="mailto:vosnils@proton.me" class="contact-link" title="Email">📧</a>
+            <a href="https://www.linkedin.com/in/nils-vos-21b182208/" class="contact-link" title="LinkedIn">💼</a>
+            <a href="https://github.com/Vosnils18" class="contact-link" title="GitHub">💻</a>
+        </div>
+        
+        <div style="text-align: center; margin-top: 3rem; opacity: 0.7;">
+            <p>Based in Netherlands</p>
+            <p class="holographic">Specializing in Building Management Systems • Data Science & AI Student • Cybcersecurity Enthousiast</p>
+        </div>
+    </section>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
