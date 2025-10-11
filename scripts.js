@@ -82,8 +82,37 @@ function initSmoothScrolling() {
                     behavior: 'smooth',
                     block: 'start'
                 });
+                
+                // Close mobile menu after clicking
+                const navMenu = document.getElementById('nav-menu');
+                const hamburger = document.getElementById('hamburger');
+                if (navMenu.classList.contains('active')) {
+                    navMenu.classList.remove('active');
+                    hamburger.classList.remove('active');
+                }
             }
         });
+    });
+}
+
+// Hamburger menu toggle
+function initHamburgerMenu() {
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+    
+    if (!hamburger || !navMenu) return;
+    
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        }
     });
 }
 
@@ -194,6 +223,7 @@ function initializePortfolio() {
         createCodeRain();
         handleScrollAnimations();
         initSmoothScrolling();
+        initHamburgerMenu();
         initProjectCardEffects();
         
         // Delayed animations
