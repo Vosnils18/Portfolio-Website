@@ -243,6 +243,13 @@ nav a:hover::after {
     50% { background-position: 100% 50%; }
 }
 
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
 .cta-button {
     display: inline-block;
     padding: 15px 30px;
@@ -258,6 +265,38 @@ nav a:hover::after {
 .cta-button:hover {
     transform: translateY(-3px);
     box-shadow: 0 15px 40px rgba(0, 255, 255, 0.5);
+}
+
+.cv-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 15px 30px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 5px 20px rgba(0, 255, 255, 0.1);
+}
+
+.cv-button:hover {
+    background: rgba(0, 255, 255, 0.1);
+    border-color: rgba(0, 255, 255, 0.6);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 255, 255, 0.3);
+    color: #00ffff;
+}
+
+.cv-button svg {
+    transition: transform 0.3s ease;
+}
+
+.cv-button:hover svg {
+    transform: translateY(3px);
 }
 
 /* Sections */
@@ -742,6 +781,17 @@ h2::after {
         font-size: 0.95rem;
     }
     
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cta-button, .cv-button {
+        width: 100%;
+        max-width: 250px;
+        margin: 0.5rem 0;
+    }
+    
     h2 { 
         font-size: 2rem;
         margin-bottom: 2rem;
@@ -779,10 +829,6 @@ h2::after {
 
     .skills-container {
         grid-template-columns: 1fr;
-    }
-
-    .skill-category {
-        padding: 1.5rem;
     }
 
     .terminal {
