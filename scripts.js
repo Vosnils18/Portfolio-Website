@@ -3,13 +3,13 @@ function createParticles() {
     const particlesContainer = document.getElementById('particles');
     if (!particlesContainer) return;
     
-    for (let i = 0; i < 80; i++) {
+    for (let i = 0; i < 50; i++) {
         const particle = document.createElement('div');
         particle.className = 'particle';
         particle.style.left = Math.random() * 100 + '%';
         particle.style.animationDelay = Math.random() * 20 + 's';
         particle.style.animationDuration = (Math.random() * 20 + 10) + 's';
-        particle.style.opacity = Math.random() * 0.5 + 0.1;
+        particle.style.opacity = Math.random() * 0.3 + 0.1;
         particlesContainer.appendChild(particle);
     }
 }
@@ -19,13 +19,13 @@ function createMatrixRain() {
     const matrixContainer = document.getElementById('matrix');
     if (!matrixContainer) return;
     
-    const chars = '01234567890101010101ABCDEF{}[]();.,<>/\\|~#$%&*+-=';
+    const chars = '01';
     
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < 15; i++) {
         const column = document.createElement('div');
         column.className = 'matrix-column';
         column.style.left = Math.random() * 100 + '%';
-        column.style.animationDuration = (Math.random() * 10 + 5) + 's';
+        column.style.animationDuration = (Math.random() * 10 + 8) + 's';
         column.style.animationDelay = Math.random() * 5 + 's';
         
         let text = '';
@@ -43,9 +43,9 @@ function createCodeRain() {
     const codeRainContainer = document.getElementById('codeRain');
     if (!codeRainContainer) return;
     
-    const codeChars = '{}[]();,.01abcdefABCDEF';
+    const codeChars = '{}[]();,.01';
     
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 8; i++) {
         const drop = document.createElement('div');
         drop.className = 'code-drop';
         drop.style.left = Math.random() * 100 + '%';
@@ -71,24 +71,37 @@ function handleScrollAnimations() {
     });
 }
 
+// Nav scroll effect
+function handleNavScroll() {
+    const nav = document.querySelector('nav');
+    if (window.scrollY > 100) {
+        nav.classList.add('scrolled');
+    } else {
+        nav.classList.remove('scrolled');
+    }
+}
+
 // Smooth scrolling navigation
 function initSmoothScrolling() {
-    document.querySelectorAll('nav a').forEach(anchor => {
+    document.querySelectorAll('nav a, .cta-button').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-                
-                // Close mobile menu after clicking
-                const navMenu = document.getElementById('nav-menu');
-                const hamburger = document.getElementById('hamburger');
-                if (navMenu.classList.contains('active')) {
-                    navMenu.classList.remove('active');
-                    hamburger.classList.remove('active');
+            const href = this.getAttribute('href');
+            if (href && href.startsWith('#')) {
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    
+                    // Close mobile menu after clicking
+                    const navMenu = document.getElementById('nav-menu');
+                    const hamburger = document.getElementById('hamburger');
+                    if (navMenu.classList.contains('active')) {
+                        navMenu.classList.remove('active');
+                        hamburger.classList.remove('active');
+                    }
                 }
             }
         });
@@ -122,16 +135,14 @@ function animateTerminal() {
     if (!terminalContent) return;
     
     const lines = [
-        '$ python predict_battery_health.py --model=lstm --data=telemetry',
-        '> Processing rFMS data stream...',
-        '> CRISP-DM methodology applied',
-        '> Model accuracy: 94.7% | Status: OPTIMAL'
+        '$ python building_optimization.py --system=foxbms --data=sensors',
+        '> Processing sensor data stream...',
+        '> Optimizing HVAC performance',
+        '> System efficiency: 94.7% | Status: OPTIMAL'
     ];
     
-    // Clear terminal and add first line
     terminalContent.innerHTML = '<div>' + lines[0] + '</div>';
     
-    // Add remaining lines with delay
     lines.slice(1).forEach((line, index) => {
         setTimeout(() => {
             const lineDiv = document.createElement('div');
@@ -180,38 +191,49 @@ function animateNumbers() {
     });
 }
 
-// Typewriter effect for hero - fixed version
-function initTypewriter() {
-    const typewriterElement = document.querySelector('.typewriter');
-    if (!typewriterElement) return;
+// Contact form handling
+function initContactForm() {
+    const form = document.getElementById('contactForm');
+    if (!form) return;
     
-    // Remove the CSS animation and handle it purely with JS
-    typewriterElement.style.animation = 'blink-caret .75s step-end infinite';
-    typewriterElement.style.overflow = 'visible';
-    typewriterElement.style.width = 'auto';
-}
-
-// Add hover effects to project cards
-function initProjectCardEffects() {
-    const projectCards = document.querySelectorAll('.project-card');
-    projectCards.forEach(card => {
-        card.addEventListener('mouseenter', () => {
-            const techTags = card.querySelectorAll('.tech-tag');
-            techTags.forEach((tag, index) => {
-                setTimeout(() => {
-                    tag.style.transform = 'scale(1.05)';
-                    tag.style.background = 'rgba(0, 255, 255, 0.4)';
-                }, index * 50);
-            });
-        });
+    form.addEventListener('submit', async function(e) {
+        e.preventDefault();
         
-        card.addEventListener('mouseleave', () => {
-            const techTags = card.querySelectorAll('.tech-tag');
-            techTags.forEach(tag => {
-                tag.style.transform = 'scale(1)';
-                tag.style.background = 'rgba(0, 255, 255, 0.2)';
+        const formStatus = document.getElementById('formStatus');
+        const submitButton = form.querySelector('.submit-button');
+        
+        // Disable submit button
+        submitButton.disabled = true;
+        submitButton.innerHTML = '<span>Sending...</span>';
+        
+        // Get form data
+        const formData = new FormData(form);
+        
+        try {
+            // Replace with your Formspree endpoint
+            const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
             });
-        });
+            
+            if (response.ok) {
+                formStatus.className = 'form-status success';
+                formStatus.textContent = 'Message sent successfully! I\'ll get back to you soon.';
+                form.reset();
+            } else {
+                throw new Error('Form submission failed');
+            }
+        } catch (error) {
+            formStatus.className = 'form-status error';
+            formStatus.textContent = 'Oops! There was a problem sending your message. Please try again or email me directly.';
+        } finally {
+            // Re-enable submit button
+            submitButton.disabled = false;
+            submitButton.innerHTML = '<span>Send Message</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"/></svg>';
+        }
     });
 }
 
@@ -224,19 +246,19 @@ function initializePortfolio() {
         handleScrollAnimations();
         initSmoothScrolling();
         initHamburgerMenu();
-        initProjectCardEffects();
+        initContactForm();
         
         // Delayed animations
         setTimeout(animateTerminal, 2000);
         setTimeout(animateNumbers, 1000);
-        setTimeout(initTypewriter, 500);
         
-        // Scroll listener
+        // Scroll listeners
         window.addEventListener('scroll', handleScrollAnimations);
+        window.addEventListener('scroll', handleNavScroll);
         
-        console.log('Portfolio animations initialized successfully');
+        console.log('Portfolio initialized successfully');
     } catch (error) {
-        console.error('Error initializing animations:', error);
+        console.error('Error initializing portfolio:', error);
     }
 }
 
