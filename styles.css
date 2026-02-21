@@ -107,10 +107,21 @@ nav.scrolled {
 }
 
 .nav-logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #64ffda;
-    text-shadow: 0 0 10px rgba(100, 255, 218, 0.5);
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo-img {
+    height: 40px;
+    width: auto;
+    filter: drop-shadow(0 0 10px rgba(100, 255, 218, 0.3));
+    transition: all 0.3s ease;
+}
+
+.logo-img:hover {
+    filter: drop-shadow(0 0 15px rgba(100, 255, 218, 0.5));
+    transform: scale(1.05);
 }
 
 .hamburger {
@@ -163,11 +174,11 @@ nav a {
     display: block;
 }
 
-nav a:hover {
+nav ul a:hover {
     color: #64ffda;
 }
 
-nav a::after {
+nav ul a::after {
     content: '';
     position: absolute;
     bottom: -5px;
@@ -179,7 +190,7 @@ nav a::after {
     transition: width 0.3s ease;
 }
 
-nav a:hover::after {
+nav ul a:hover::after {
     width: 80%;
 }
 
@@ -853,6 +864,10 @@ footer p {
         display: flex;
     }
 
+    .logo-img {
+        height: 32px;
+    }
+
     nav ul {
         position: fixed;
         left: -100%;
@@ -928,5 +943,9 @@ footer p {
     .availability-badge {
         font-size: 0.8rem;
         padding: 0.4rem 1rem;
+    }
+
+    .logo-img {
+        height: 28px;
     }
 }
