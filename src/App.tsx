@@ -36,14 +36,14 @@ const PROJECTS: Project[] = [
     tags: ["Vision", "PyTorch"], 
     category: "AI",
     github: "https://github.com/Vosnils18/plantseg",
-    link: "https://nilsvos.dev"
   },
   { 
     id: "02", 
     title: "Truck Predictive", 
     description: "Mechanical failure prediction for DAF commercial fleets.", 
     tags: ["IoT", "Analysis"], 
-    category: "Industrial"
+    category: "Industrial",
+    github: "https://github.com/Vosnils18/predictive_maintenance"
   },
   { 
     id: "03", 
