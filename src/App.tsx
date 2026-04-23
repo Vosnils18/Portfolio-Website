@@ -229,7 +229,7 @@ export default function App() {
                   </div>
                   <span className="text-[10px] uppercase tracking-[0.3em] font-black">Portfolio</span>
                 </a>
-                <a href="/Nils_Vos_CV.pdf" download="Nils_Vos_CV.pdf" className="flex items-center gap-4 group cursor-pointer">
+                <a href="/Nils_Vos_CV.pdf" download className="flex items-center gap-4 group cursor-pointer">
                   <div className="w-14 h-14 rounded-full border border-brand-black/20 dark:border-white/20 flex items-center justify-center group-hover:bg-brand-orange group-hover:text-white group-hover:border-brand-orange transition-all duration-500">
                     <Download size={18} />
                   </div>
@@ -296,76 +296,70 @@ export default function App() {
         </div>
       </section>
 
-      {/* WORK SECTION */}
+      {/* WORK GRID */}
       <section id="work" className="py-32">
         <div className="container mx-auto px-6 md:px-12">
-          <div className="flex justify-between items-end mb-20">
-            <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase">Selected<br/>Work</h2>
-            <p className="text-[10px] uppercase tracking-[0.4em] text-brand-black/30 dark:text-white/30 font-bold hidden md:block">2022 — 2026</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-brand-black/5 dark:bg-white/5">
-            {PROJECTS.map((project) => (
-              <motion.a
-                key={project.id}
-                href={project.github || project.link || "#"}
-                target="_blank"
-                rel="noopener noreferrer"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                className="theme-card theme-card-hover p-8 group block"
-              >
-                <div className="flex justify-between items-start mb-8">
-                  <span className="text-[10px] font-mono text-brand-black/20 dark:text-white/20">{project.id}</span>
-                  <span className="text-[9px] uppercase tracking-widest text-brand-orange font-bold">{project.category}</span>
-                </div>
-                <h3 className="text-2xl font-black tracking-tight mb-3 group-hover:text-brand-orange transition-colors">{project.title}</h3>
-                <p className="text-sm text-brand-black/50 dark:text-white/50 leading-relaxed mb-8">{project.description}</p>
-                <div className="flex justify-between items-center">
-                  <div className="flex gap-2">
-                    {project.tags.map(tag => (
-                      <span key={tag} className="text-[9px] uppercase tracking-widest border border-brand-black/10 dark:border-white/10 px-2 py-1">{tag}</span>
-                    ))}
-                  </div>
-                  <div className="flex gap-3 text-brand-black/20 dark:text-white/20 group-hover:text-brand-orange transition-colors">
+           <div className="flex items-center justify-between mb-20">
+              <h2 className="text-5xl md:text-8xl font-black tracking-tighter uppercase leading-none">SELECTED WORK<span className="text-brand-orange">.</span></h2>
+           </div>
+           
+           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              {PROJECTS.map((project, i) => (
+                <motion.a 
+                  key={project.id}
+                  href={project.github || project.link || "#"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="group relative aspect-video theme-card theme-card-hover p-8 md:p-12 flex flex-col justify-between"
+                >
+                   <div className="flex justify-between items-start">
+                      <span className="text-[10px] font-mono text-brand-black/20 dark:text-white/20">{project.id}</span>
+                      <div className="flex gap-4 pointer-events-none text-brand-black/40 dark:text-white/40 group-hover:text-brand-orange transition-colors">
                         {project.github && <Github size={18} />}
-                        {project.link && !project.github && <Globe size={18} />}
-                  </div>
-                </div>
-              </motion.a>
-            ))}
-          </div>
+                        {project.link && <Globe size={18} />}
+                      </div>
+                   </div>
+                   <div>
+                      <h3 className="text-4xl md:text-5xl mb-4 uppercase tracking-tighter transition-colors group-hover:text-brand-orange">{project.title}</h3>
+                      <p className="text-sm text-brand-black/40 dark:text-white/40 max-w-xs">{project.description}</p>
+                   </div>
+                   <div className="flex justify-between items-end">
+                      <div className="flex flex-wrap gap-x-4 gap-y-2">
+                        {project.tags.map(tag => (
+                          <span key={tag} className="text-[9px] font-bold uppercase tracking-widest text-brand-black/20 dark:text-white/20">{tag}</span>
+                        ))}
+                      </div>
+                      <ChevronRight className="opacity-0 group-hover:opacity-100 transition-all translate-x-[-10px] group-hover:translate-x-0 text-brand-orange" />
+                   </div>
+                </motion.a>
+              ))}
+           </div>
         </div>
       </section>
 
       {/* EXPERTISE SECTION */}
       <section className="py-32 border-t border-brand-black/5 dark:border-white/5">
-        <div className="container mx-auto px-6 md:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
-            <div>
-              <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase mb-8">Technical<br/>Expertise</h2>
-              <p className="text-brand-black/50 dark:text-white/50 max-w-md leading-relaxed">A focused stack built for real-world ML systems, from data ingestion to production deployment.</p>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-              {EXPERTISE.map((area) => (
-                <div key={area.category}>
-                  <p className="text-[10px] uppercase tracking-[0.4em] text-brand-orange font-black mb-4">{area.category}</p>
-                  <ul className="space-y-2">
-                    {area.skills.map(skill => (
-                      <li key={skill} className="flex items-center gap-3 text-sm text-brand-black/60 dark:text-white/60">
-                        <ChevronRight size={12} className="text-brand-black/20 dark:text-white/20" />
-                        {skill}
-                      </li>
-                    ))}
-                  </ul>
+        <div className="container mx-auto px-6 md:px-12 text-center mb-20">
+            <h2 className="text-4xl font-black uppercase">Technical Domains</h2>
+        </div>
+        <div className="container mx-auto px-6 md:px-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+            {EXPERTISE.map((exp) => (
+                <div key={exp.category} className="space-y-6">
+                    <h4 className="text-[10px] uppercase font-bold tracking-[0.4em] text-brand-orange">{exp.category}</h4>
+                    <ul className="space-y-3 font-medium text-lg tracking-tight">
+                        {exp.skills.map(s => (
+                            <li key={s} className="hover:translate-x-2 transition-transform cursor-default">{s}</li>
+                        ))}
+                    </ul>
                 </div>
-              ))}
-            </div>
-          </div>
+            ))}
         </div>
       </section>
 
-      {/* CONTACT SECTION */}
+      {/* CONTACT */}
       <section id="contact" className="py-32 bg-white dark:bg-brand-black relative">
         <div className="container mx-auto px-6 md:px-12 text-center">
             <motion.div
@@ -379,8 +373,8 @@ export default function App() {
               </h2>
               
               <div className="flex flex-wrap justify-center gap-8 md:gap-12 text-[10px] uppercase tracking-[0.4em] font-black text-brand-black/30 dark:text-white/30">
-                 <a href="https://www.linkedin.com/in/nils-vos-21b182208/" target="_blank" rel="noopener noreferrer" className="hover:text-brand-orange transition-colors">LinkedIn</a>
-                 <a href="https://github.com/Vosnils18" target="_blank" rel="noopener noreferrer" className="hover:text-brand-orange transition-colors">GitHub</a>
+                 <a href="https://linkedin.com/in/nilsvos" target="_blank" rel="noopener noreferrer" className="hover:text-brand-orange transition-colors">LinkedIn</a>
+                 <a href="https://github.com/nilsvos" target="_blank" rel="noopener noreferrer" className="hover:text-brand-orange transition-colors">GitHub</a>
                  <a href="mailto:info@nilsvos.dev" className="hover:text-brand-orange transition-colors">Email</a>
               </div>
             </motion.div>
