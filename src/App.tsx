@@ -387,9 +387,9 @@ export default function App() {
          <div className="container mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-8">
             <div className="text-[10px] font-mono text-brand-black/20 dark:text-white/20 tracking-widest uppercase">©2026 NILS VOS — DATA & AI Solutions</div>
             <div className="flex -space-x-3">
-              <div className="w-8 h-8 rounded-full border-2 border-white dark:border-brand-black bg-brand-black/5 dark:bg-white/5"></div>
-              <div className="w-8 h-8 rounded-full border-2 border-white dark:border-brand-black bg-brand-black/10 dark:bg-white/10"></div>
-              <div className="w-8 h-8 rounded-full border-2 border-white dark:border-brand-black bg-brand-black/20 dark:bg-white/20"></div>
+              <div className="w-8 h-8 rounded-full border-2 border-brand-black/10 dark:border-brand-black bg-brand-black/5 dark:bg-white/5"></div>
+              <div className="w-8 h-8 rounded-full border-2 border-brand-black/10 dark:border-brand-black bg-brand-black/10 dark:bg-white/10"></div>
+              <div className="w-8 h-8 rounded-full border-2 border-brand-black/10 dark:border-brand-black bg-brand-black/20 dark:bg-white/20"></div>
             </div>
             <div className="text-[10px] uppercase tracking-[0.4em] text-brand-black/20 dark:text-white/20 font-bold">ROtterdam 51.92N 4.47E</div>
          </div>
