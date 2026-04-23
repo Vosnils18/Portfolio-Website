@@ -373,8 +373,8 @@ export default function App() {
               </h2>
               
               <div className="flex flex-wrap justify-center gap-8 md:gap-12 text-[10px] uppercase tracking-[0.4em] font-black text-brand-black/30 dark:text-white/30">
-                 <a href="https://linkedin.com/in/nilsvos" target="_blank" rel="noopener noreferrer" className="hover:text-brand-orange transition-colors">LinkedIn</a>
-                 <a href="https://github.com/nilsvos" target="_blank" rel="noopener noreferrer" className="hover:text-brand-orange transition-colors">GitHub</a>
+                 <a href="https://linkedin.com/in/nils-vos-21b182208" target="_blank" rel="noopener noreferrer" className="hover:text-brand-orange transition-colors">LinkedIn</a>
+                 <a href="https://github.com/Vosnils18" target="_blank" rel="noopener noreferrer" className="hover:text-brand-orange transition-colors">GitHub</a>
                  <a href="mailto:info@nilsvos.dev" className="hover:text-brand-orange transition-colors">Email</a>
               </div>
             </motion.div>
