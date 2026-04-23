@@ -262,8 +262,9 @@ export default function App() {
                  <span>PYTORCH</span>
                  <span>TENSORFLOW</span>
                  <span>PYTHON</span>
-                 <span>SQL</span>
+                 <span>COMPUTER VISION</span>
                  <span>MLOPS</span>
+                 <span>TRANSFORMERS</span>
               </div>
             </div>
             <div className="flex justify-between items-end">
