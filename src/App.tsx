@@ -96,7 +96,7 @@ const Navbar = ({ isDark, toggleDark }: { isDark: boolean; toggleDark: () => voi
       <div className="text-xl font-black tracking-tighter text-brand-black dark:text-white">NILS VOS<span className="text-brand-orange">.</span></div>
       
       <div className="hidden md:flex gap-10 text-[10px] uppercase tracking-[0.3em] font-bold text-brand-black/50 dark:text-white/50">
-        {['About', 'Services', 'Work', 'Contact'].map((item) => (
+        {['About', 'Offer', 'Services', 'Work', 'Contact'].map((item) => (
           <a key={item} href={`#${item.toLowerCase()}`} className="hover:text-brand-orange transition-colors cursor-pointer text-brand-black dark:text-white">
             {item}
           </a>
@@ -119,7 +119,7 @@ const Navbar = ({ isDark, toggleDark }: { isDark: boolean; toggleDark: () => voi
             className="fixed inset-0 bg-white dark:bg-brand-black z-[60] flex flex-col items-center justify-center gap-8"
           >
             <button onClick={() => setIsOpen(false)} className="absolute top-8 right-8 text-brand-black dark:text-white"><X size={32} /></button>
-            {['About', 'Services', 'Work', 'Contact'].map((item) => (
+            {['About', 'Offer', 'Services', 'Work', 'Contact'].map((item) => (
               <a key={item} href={`#${item.toLowerCase()}`} onClick={() => setIsOpen(false)} className="text-4xl font-black tracking-tighter hover:text-brand-orange text-brand-black dark:text-white">
                 {item}
               </a>
@@ -270,6 +270,37 @@ export default function App() {
             <div className="flex justify-between items-end">
               <div className="w-16 h-[1px] bg-brand-black/10 dark:bg-white/10"></div>
               <p className="text-[10px] font-mono text-brand-black/10 dark:text-white/10">©2026</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* OFFER SECTION */}
+      <section id="offer" className="py-32 border-y border-brand-black/5 dark:border-white/5 bg-brand-black/[0.01] dark:bg-white/[0.01]">
+        <div className="container mx-auto px-6 md:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+            <div className="lg:col-span-7">
+              <p className="text-brand-orange text-[10px] uppercase tracking-[0.5em] mb-8 font-black">01 / Workflow automation</p>
+              <h2 className="text-5xl md:text-8xl font-black tracking-tighter uppercase leading-[0.9] mb-10">
+                Small automations that remove repetitive work<span className="text-brand-orange">.</span>
+              </h2>
+              <p className="text-base md:text-lg text-brand-black/60 dark:text-white/50 leading-relaxed max-w-2xl">
+                I help small teams replace one repetitive manual process with a simple, documented automation. I can work from a spreadsheet, webhook, email inbox, API, or exported file, then deliver the workflow, any small Python helper, a test example, and a short handover. My default projects are deliberately small and fixed-scope so you can see a useful result quickly. For image/CV and local-AI work, I focus on practical prototypes that are easy to run and evaluate.
+              </p>
+            </div>
+
+            <div className="lg:col-span-5 theme-card p-8 md:p-10">
+              <p className="text-[10px] uppercase tracking-[0.4em] text-brand-black/30 dark:text-white/30 mb-8 font-bold">What you get</p>
+              <ul className="space-y-6 text-sm md:text-base text-brand-black/70 dark:text-white/60">
+                <li className="flex gap-4"><span className="text-brand-orange font-mono">01</span><span>I connect forms, email, spreadsheets, APIs, and internal tools with n8n and Python.</span></li>
+                <li className="flex gap-4"><span className="text-brand-orange font-mono">02</span><span>Fixed scope, clear deliverables, and a short handover—not a giant software project.</span></li>
+                <li className="flex gap-4"><span className="text-brand-orange font-mono">03</span><span>I can also build small data reports, image-processing tools, and local-AI prototypes.</span></li>
+                <li className="flex gap-4"><span className="text-brand-orange font-mono">04</span><span>Production workflows run in your accounts or infrastructure, so you keep control of your data.</span></li>
+              </ul>
+              <a href="#contact" className="mt-10 flex items-center gap-4 group text-[10px] uppercase tracking-[0.3em] font-black">
+                <span className="w-12 h-12 rounded-full border border-brand-black/20 dark:border-white/20 flex items-center justify-center group-hover:bg-brand-orange group-hover:text-white group-hover:border-brand-orange transition-all duration-500"><ArrowRight size={16} /></span>
+                <span className="group-hover:text-brand-orange transition-colors">Discuss a workflow</span>
+              </a>
             </div>
           </div>
         </div>
